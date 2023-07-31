@@ -13,6 +13,9 @@
 		3FDB6B4C2A779A110031CBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B4A2A779A110031CBBC /* Main.storyboard */; };
 		3FDB6B4E2A779A120031CBBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B4D2A779A120031CBBC /* Assets.xcassets */; };
 		3FDB6B512A779A120031CBBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B4F2A779A120031CBBC /* LaunchScreen.storyboard */; };
+		3FDB6B592A779AC20031CBBC /* BookShelfCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B582A779AC20031CBBC /* BookShelfCollectionViewController.swift */; };
+		3FDB6B5C2A779AD50031CBBC /* BookShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */; };
+		3FDB6B5D2A779AD50031CBBC /* BookShelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		3FDB6B4D2A779A120031CBBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FDB6B502A779A120031CBBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FDB6B522A779A120031CBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FDB6B582A779AC20031CBBC /* BookShelfCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookShelfCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 		3FDB6B432A779A110031CBBC /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
+				3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */,
+				3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */,
+				3FDB6B4A2A779A110031CBBC /* Main.storyboard */,
+				3FDB6B582A779AC20031CBBC /* BookShelfCollectionViewController.swift */,
 				3FDB6B442A779A110031CBBC /* AppDelegate.swift */,
 				3FDB6B462A779A110031CBBC /* SceneDelegate.swift */,
 				3FDB6B482A779A110031CBBC /* ViewController.swift */,
-				3FDB6B4A2A779A110031CBBC /* Main.storyboard */,
 				3FDB6B4D2A779A120031CBBC /* Assets.xcassets */,
 				3FDB6B4F2A779A120031CBBC /* LaunchScreen.storyboard */,
 				3FDB6B522A779A120031CBBC /* Info.plist */,
@@ -125,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDB6B5D2A779AD50031CBBC /* BookShelfCollectionViewCell.xib in Resources */,
 				3FDB6B512A779A120031CBBC /* LaunchScreen.storyboard in Resources */,
 				3FDB6B4E2A779A120031CBBC /* Assets.xcassets in Resources */,
 				3FDB6B4C2A779A110031CBBC /* Main.storyboard in Resources */,
@@ -140,6 +150,8 @@
 			files = (
 				3FDB6B492A779A110031CBBC /* ViewController.swift in Sources */,
 				3FDB6B452A779A110031CBBC /* AppDelegate.swift in Sources */,
+				3FDB6B5C2A779AD50031CBBC /* BookShelfCollectionViewCell.swift in Sources */,
+				3FDB6B592A779AC20031CBBC /* BookShelfCollectionViewController.swift in Sources */,
 				3FDB6B472A779A110031CBBC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +307,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +315,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hany.BookShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,6 +339,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +347,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hany.BookShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
