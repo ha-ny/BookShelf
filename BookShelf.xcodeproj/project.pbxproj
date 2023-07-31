@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		3FDB6B452A779A110031CBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B442A779A110031CBBC /* AppDelegate.swift */; };
 		3FDB6B472A779A110031CBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B462A779A110031CBBC /* SceneDelegate.swift */; };
-		3FDB6B492A779A110031CBBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B482A779A110031CBBC /* ViewController.swift */; };
+		3FDB6B492A779A110031CBBC /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B482A779A110031CBBC /* BookDetailViewController.swift */; };
 		3FDB6B4C2A779A110031CBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B4A2A779A110031CBBC /* Main.storyboard */; };
 		3FDB6B4E2A779A120031CBBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B4D2A779A120031CBBC /* Assets.xcassets */; };
 		3FDB6B512A779A120031CBBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B4F2A779A120031CBBC /* LaunchScreen.storyboard */; };
 		3FDB6B592A779AC20031CBBC /* BookShelfCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B582A779AC20031CBBC /* BookShelfCollectionViewController.swift */; };
 		3FDB6B5C2A779AD50031CBBC /* BookShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */; };
 		3FDB6B5D2A779AD50031CBBC /* BookShelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */; };
+		3FDB6B5F2A779C9B0031CBBC /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5E2A779C9B0031CBBC /* MovieInfo.swift */; };
+		3FDB6B612A77A5570031CBBC /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B602A77A5570031CBBC /* searchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3FDB6B412A779A110031CBBC /* BookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDB6B442A779A110031CBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDB6B462A779A110031CBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3FDB6B482A779A110031CBBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FDB6B482A779A110031CBBC /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		3FDB6B4B2A779A110031CBBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FDB6B4D2A779A120031CBBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FDB6B502A779A120031CBBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		3FDB6B582A779AC20031CBBC /* BookShelfCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookShelfCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		3FDB6B5E2A779C9B0031CBBC /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = SOURCE_ROOT; };
+		3FDB6B602A77A5570031CBBC /* searchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +66,15 @@
 		3FDB6B432A779A110031CBBC /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
+				3FDB6B602A77A5570031CBBC /* searchViewController.swift */,
 				3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */,
 				3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */,
 				3FDB6B4A2A779A110031CBBC /* Main.storyboard */,
 				3FDB6B582A779AC20031CBBC /* BookShelfCollectionViewController.swift */,
 				3FDB6B442A779A110031CBBC /* AppDelegate.swift */,
 				3FDB6B462A779A110031CBBC /* SceneDelegate.swift */,
-				3FDB6B482A779A110031CBBC /* ViewController.swift */,
+				3FDB6B482A779A110031CBBC /* BookDetailViewController.swift */,
+				3FDB6B5E2A779C9B0031CBBC /* MovieInfo.swift */,
 				3FDB6B4D2A779A120031CBBC /* Assets.xcassets */,
 				3FDB6B4F2A779A120031CBBC /* LaunchScreen.storyboard */,
 				3FDB6B522A779A120031CBBC /* Info.plist */,
@@ -148,10 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FDB6B492A779A110031CBBC /* ViewController.swift in Sources */,
+				3FDB6B612A77A5570031CBBC /* searchViewController.swift in Sources */,
+				3FDB6B492A779A110031CBBC /* BookDetailViewController.swift in Sources */,
 				3FDB6B452A779A110031CBBC /* AppDelegate.swift in Sources */,
 				3FDB6B5C2A779AD50031CBBC /* BookShelfCollectionViewCell.swift in Sources */,
 				3FDB6B592A779AC20031CBBC /* BookShelfCollectionViewController.swift in Sources */,
+				3FDB6B5F2A779C9B0031CBBC /* MovieInfo.swift in Sources */,
 				3FDB6B472A779A110031CBBC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

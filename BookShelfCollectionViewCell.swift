@@ -12,5 +12,6 @@ class BookShelfCollectionViewCell: UICollectionViewCell {
     @IBOutlet var backView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
-        
+    @IBOutlet var rateLabel: UILabel!
+    
 }

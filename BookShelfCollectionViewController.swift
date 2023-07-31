@@ -7,82 +7,62 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class BookShelfCollectionViewController: UICollectionViewController {
+    
+    let movieData = MovieInfo().movie
+    let colorArray: [UIColor] = [.red, .orange, .yellow, .green, .blue, .brown, .purple, .cyan, .lightGray].shuffled()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        
+        let nib = UINib(nibName: "BookShelfCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "BookShelfCollectionViewCell")
+        
+        designCollectionView()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    func designCollectionView(){
+        
+        //cell estimated size none으로 인터페이스 빌더에서 설정할 것
+        let spacing: CGFloat = 15
+        let width = UIScreen.main.bounds.width - (spacing * 3) //원하는 칸 + 1
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: width / 2, height: width / 1.5) // 1:1
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        collectionView.collectionViewLayout = layout
     }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    
+    @IBAction func searchButtonClick(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "searchViewController")
+        navigationController?.pushViewController(vc, animated: true)
     }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return movieData.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookShelfCollectionViewCell", for: indexPath) as! BookShelfCollectionViewCell
+        cell.backView.backgroundColor = colorArray[indexPath.row]
+        cell.backView.layer.cornerRadius = 8
+        cell.titleLabel.text = movieData[indexPath.row].title
+        cell.imageView.image = UIImage(named: movieData[indexPath.row].title)
+        cell.rateLabel.text = String(movieData[indexPath.row].rate)
+        
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "BookDetailViewController") as! BookDetailViewController
+        vc.pushTitle = movieData[indexPath.row].title
+        navigationController?.pushViewController(vc, animated: true)
     }
-    */
-
+    
 }
