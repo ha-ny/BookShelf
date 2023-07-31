@@ -9,9 +9,8 @@ import UIKit
 
 class BookShelfCollectionViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    @IBOutlet var backView: UIView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+        
 }
