@@ -7,8 +7,6 @@
 
 import UIKit
 
-var movieData = MovieInfo().movie
-
 class BookShelfCollectionViewController: UICollectionViewController {
     
     let cellIdentifier = "BookShelfCollectionViewCell"
@@ -47,16 +45,16 @@ class BookShelfCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieData.count
+        return  MovieInfo.movie.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! BookShelfCollectionViewCell
-        cell.titleLabel.text = movieData[indexPath.row].title
-        cell.imageView.image = UIImage(named: movieData[indexPath.row].title)
+        cell.titleLabel.text =  MovieInfo.movie[indexPath.row].title
+        cell.imageView.image = UIImage(named:  MovieInfo.movie[indexPath.row].title)
         
-        let heart = movieData[indexPath.row].like ? "heart.fill" : "heart"
+        let heart =  MovieInfo.movie[indexPath.row].like ? "heart.fill" : "heart"
         cell.likeButton.setImage(UIImage(systemName: heart), for: .normal)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClick), for: .touchUpInside)
@@ -65,7 +63,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
     }
     
     @objc func likeButtonClick(_ sender: UIButton){
-        movieData[sender.tag].like.toggle()
+        MovieInfo.movie[sender.tag].like.toggle()
         collectionView.reloadData()
     }
     
