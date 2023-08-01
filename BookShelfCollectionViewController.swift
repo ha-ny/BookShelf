@@ -61,7 +61,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "BookDetailViewController") as! BookDetailViewController
-        vc.pushTitle = movieData[indexPath.row].title
+        vc.pushData = movieData[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     

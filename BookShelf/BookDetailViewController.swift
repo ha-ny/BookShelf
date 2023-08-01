@@ -9,16 +9,22 @@ import UIKit
 
 class BookDetailViewController: UIViewController {
 
-    var pushTitle = ""
+    var pushData = MovieInfo().movie[0]
     
+    @IBOutlet var rateLabel: UILabel!
+    @IBOutlet var releaseLabel: UILabel!
+    @IBOutlet var runtimeLabel: UILabel!
+    @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = pushTitle
-        imageView.image = UIImage(named: pushTitle)
+        title = pushData.title
+        rateLabel.text = String(pushData.rate)
+        releaseLabel.text = pushData.releaseDate
+        runtimeLabel.text = "\(pushData.runtime)분"
+        overviewLabel.text = pushData.overview
+        imageView.image = UIImage(named: pushData.title)
     }
-
-
 }
 
