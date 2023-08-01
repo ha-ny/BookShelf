@@ -7,27 +7,30 @@
 
 import UIKit
 
+var movieData = MovieInfo().movie
+
 class BookShelfCollectionViewController: UICollectionViewController {
     
-    var movieData = MovieInfo().movie{
-        didSet{
-            print("찍힘?")
-            collectionView.reloadData()
-        }
-    }
-
+    let cellIdentifier = "BookShelfCollectionViewCell"
+    let detailViewIdentifier = "BookDetailViewController"
+    let searchViewIdentifier = "searchViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "BookShelfCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "BookShelfCollectionViewCell")
+        let nib = UINib(nibName: cellIdentifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
         
         designCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    
     func designCollectionView(){
         
-        //cell estimated size none으로 인터페이스 빌더에서 설정할 것
         let spacing: CGFloat = 15
         let width = UIScreen.main.bounds.width - (spacing * 4) //원하는 칸 + 1
         let layout = UICollectionViewFlowLayout()
@@ -39,9 +42,8 @@ class BookShelfCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func searchButtonClick(_ sender: UIBarButtonItem) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "searchViewController")
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard?.instantiateViewController(identifier: searchViewIdentifier)
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -50,7 +52,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookShelfCollectionViewCell", for: indexPath) as! BookShelfCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! BookShelfCollectionViewCell
         cell.titleLabel.text = movieData[indexPath.row].title
         cell.imageView.image = UIImage(named: movieData[indexPath.row].title)
         
@@ -63,16 +65,13 @@ class BookShelfCollectionViewController: UICollectionViewController {
     }
     
     @objc func likeButtonClick(_ sender: UIButton){
-        print(sender.tag)
         movieData[sender.tag].like.toggle()
-        print(movieData[sender.tag])
+        collectionView.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "BookDetailViewController") as! BookDetailViewController
-        vc.pushData = movieData[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: detailViewIdentifier) as! BookDetailViewController
+        vc.index = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
