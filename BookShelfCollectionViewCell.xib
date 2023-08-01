@@ -4,83 +4,75 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookShelfCollectionViewCell" id="gTV-IL-0wX" customClass="BookShelfCollectionViewCell" customModule="BookShelf" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="253" height="231"/>
+            <rect key="frame" x="0.0" y="0.0" width="183" height="248"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="253" height="231"/>
+                <rect key="frame" x="0.0" y="0.0" width="183" height="248"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJe-67-wwg">
-                        <rect key="frame" x="0.0" y="0.0" width="253" height="231"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9i-wI-Z2l">
-                                <rect key="frame" x="118" y="49" width="130" height="175"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="Qvj-zx-HG8"/>
-                                    <constraint firstAttribute="width" constant="130" id="pgT-TV-HJq"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTo-KS-S0K">
-                                <rect key="frame" x="8" y="10" width="237" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="ffD-tm-Xfm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pF-vR-SD8">
-                                <rect key="frame" x="5" y="203" width="90" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="4gt-cy-Cg8"/>
-                                    <constraint firstAttribute="height" constant="21" id="8ML-hF-fp5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9i-wI-Z2l">
+                        <rect key="frame" x="0.0" y="0.0" width="183" height="248"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="KEy-ob-DkL">
+                        <rect key="frame" x="0.0" y="0.0" width="183" height="248"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTo-KS-S0K">
+                        <rect key="frame" x="5" y="227" width="173" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7h-yb-tIV">
+                        <rect key="frame" x="141" y="3.6666666666666679" width="40" height="40"/>
                         <constraints>
-                            <constraint firstItem="OTo-KS-S0K" firstAttribute="top" secondItem="fJe-67-wwg" secondAttribute="top" constant="10" id="UJb-IK-d9L"/>
-                            <constraint firstAttribute="trailing" secondItem="OTo-KS-S0K" secondAttribute="trailing" constant="8" id="gLq-8y-XuI"/>
-                            <constraint firstAttribute="bottom" secondItem="F9i-wI-Z2l" secondAttribute="bottom" constant="7" id="pfQ-w0-lgn"/>
-                            <constraint firstItem="8pF-vR-SD8" firstAttribute="leading" secondItem="fJe-67-wwg" secondAttribute="leading" constant="5" id="s4R-R3-w8T"/>
-                            <constraint firstAttribute="trailing" secondItem="F9i-wI-Z2l" secondAttribute="trailing" constant="5" id="vNh-Yv-IP4"/>
-                            <constraint firstItem="OTo-KS-S0K" firstAttribute="leading" secondItem="fJe-67-wwg" secondAttribute="leading" constant="8" id="xEj-00-cgg"/>
-                            <constraint firstAttribute="bottom" secondItem="8pF-vR-SD8" secondAttribute="bottom" constant="7" id="yL5-q5-q9c"/>
+                            <constraint firstAttribute="width" constant="40" id="B0H-wk-Uwo"/>
+                            <constraint firstAttribute="width" secondItem="z7h-yb-tIV" secondAttribute="height" multiplier="1:1" id="yHQ-zd-sMY"/>
                         </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="tintColor" red="0.98729451497395837" green="0.97667586603875611" blue="0.55710273599402593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal">
+                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="fJe-67-wwg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1HJ-xD-LEn"/>
-                <constraint firstAttribute="bottom" secondItem="fJe-67-wwg" secondAttribute="bottom" id="9Qb-Wj-XBU"/>
-                <constraint firstAttribute="trailing" secondItem="fJe-67-wwg" secondAttribute="trailing" id="Jqh-Nd-2hW"/>
-                <constraint firstItem="fJe-67-wwg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WL6-N0-7MA"/>
+                <constraint firstAttribute="trailing" secondItem="OTo-KS-S0K" secondAttribute="trailing" constant="5" id="FXX-R9-97Z"/>
+                <constraint firstAttribute="bottom" secondItem="F9i-wI-Z2l" secondAttribute="bottom" id="HvO-3v-xt6"/>
+                <constraint firstItem="OTo-KS-S0K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="NCQ-bU-9TI"/>
+                <constraint firstItem="F9i-wI-Z2l" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VQl-80-aAk"/>
+                <constraint firstAttribute="trailing" secondItem="F9i-wI-Z2l" secondAttribute="trailing" id="bpG-iM-dpr"/>
+                <constraint firstItem="F9i-wI-Z2l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jnf-zd-36w"/>
+                <constraint firstAttribute="bottom" secondItem="OTo-KS-S0K" secondAttribute="bottom" constant="3" id="poI-r0-uZB"/>
+                <constraint firstAttribute="bottom" secondItem="KEy-ob-DkL" secondAttribute="bottom" id="wRn-kQ-i4E"/>
+                <constraint firstAttribute="trailing" secondItem="KEy-ob-DkL" secondAttribute="trailing" id="wXk-xN-hvb"/>
+                <constraint firstItem="z7h-yb-tIV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3.5" id="wtu-4c-PVX"/>
+                <constraint firstItem="KEy-ob-DkL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xiq-uk-ehY"/>
+                <constraint firstItem="KEy-ob-DkL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ybN-fO-Atz"/>
+                <constraint firstAttribute="trailing" secondItem="z7h-yb-tIV" secondAttribute="trailing" constant="2" id="yjV-Yl-JCh"/>
             </constraints>
-            <size key="customSize" width="253" height="231"/>
+            <size key="customSize" width="183" height="248"/>
             <connections>
-                <outlet property="backView" destination="fJe-67-wwg" id="ElV-20-4RF"/>
                 <outlet property="imageView" destination="F9i-wI-Z2l" id="HgM-2M-ojA"/>
-                <outlet property="rateLabel" destination="8pF-vR-SD8" id="iwW-55-G24"/>
+                <outlet property="likeButton" destination="z7h-yb-tIV" id="0yQ-wH-UW3"/>
                 <outlet property="titleLabel" destination="OTo-KS-S0K" id="gud-qb-1Eq"/>
             </connections>
-            <point key="canvasLocation" x="183.96946564885496" y="52.464788732394368"/>
+            <point key="canvasLocation" x="130.53435114503816" y="58.450704225352112"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="background" width="375" height="667"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
     </resources>
 </document>

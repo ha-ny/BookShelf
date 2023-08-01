@@ -9,9 +9,8 @@ import UIKit
 
 class BookShelfCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var backView: UIView!
+    @IBOutlet var likeButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var rateLabel: UILabel!
     
 }
