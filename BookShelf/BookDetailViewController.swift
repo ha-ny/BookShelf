@@ -45,8 +45,7 @@ class BookDetailViewController: UIViewController {
         imageView.image = UIImage(named: data.title)
         likeButton.image = UIImage(systemName: data.like ? "heart.fill" : "heart")
         MovieInfo.movie[index].click += 1
-        lastViewArray.insert(data.title, at: 0)
-
+        MovieInfo.lastViewArray.insert(data.title, at: 0)
     }
     
     @IBAction func likeButtonClick(_ sender: UIBarButtonItem) {

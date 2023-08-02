@@ -7,8 +7,6 @@
 
 import UIKit
 
-var lastViewArray = Array(repeating: "", count: 5)
-
 class AroundTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let lastViewCellIdentifier = "LastViewCollectionViewCell"
@@ -34,7 +32,6 @@ class AroundTableViewController: UITableViewController, UICollectionViewDelegate
         data = MovieInfo.movie.sorted(by: { $0.click > $1.click })
         tableView.reloadData()
         lastViewCollectionView.reloadData()
-        print(lastViewArray)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
@@ -60,7 +57,7 @@ class AroundTableViewController: UITableViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: lastViewCellIdentifier, for: indexPath) as! LastViewCollectionViewCell
-        cell.movieImage.image = UIImage(named: lastViewArray[indexPath.row])
+        cell.movieImage.image = UIImage(named: MovieInfo.lastViewArray[indexPath.row])
         return cell
     }
     
@@ -87,8 +84,8 @@ class AroundTableViewController: UITableViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(lastViewArray[indexPath.row])
-        guard let index = MovieInfo.movie.firstIndex(where: { $0.title == lastViewArray[indexPath.row] }) else { return }
+
+        guard let index = MovieInfo.movie.firstIndex(where: { $0.title == MovieInfo.lastViewArray[indexPath.row] }) else { return }
         
         let vc = storyboard?.instantiateViewController(withIdentifier: detailViewIdentifier) as! BookDetailViewController
         vc.index = index
