@@ -9,7 +9,7 @@ import UIKit
 
 class BookDetailViewController: UIViewController, UITextViewDelegate {
 
-    //메인화면에서 값 세팅해줌
+    //메인화면에서 값 세팅
     var index: Int = 0
     var viewName: String?
     
