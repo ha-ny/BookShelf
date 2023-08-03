@@ -21,6 +21,11 @@ class SearchCollectionViewController: UICollectionViewController, UISearchBarDel
         let nib = UINib(nibName: cellIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
         
+        designNavigationItem()
+        designCollectionView()
+    }
+
+    func designNavigationItem(){
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButton))
         navigationItem.leftBarButtonItem?.tintColor = .black
         
@@ -29,9 +34,8 @@ class SearchCollectionViewController: UICollectionViewController, UISearchBarDel
         searchBar.placeholder = "검색어를 입력해주세요."
         searchBar.delegate = self
         searchBar.setShowsCancelButton(true, animated: true)
-        designCollectionView()
     }
-
+    
     func designCollectionView(){
         
         let spacing: CGFloat = 15
@@ -62,9 +66,11 @@ class SearchCollectionViewController: UICollectionViewController, UISearchBarDel
         searchBarSearchButtonClicked(searchBar)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+
     @objc func closeButton() {
-        //dismiss는 present일때
-        //dismiss(animated: true)
         navigationController?.popViewController(animated: true)
     }
 
@@ -73,10 +79,6 @@ class SearchCollectionViewController: UICollectionViewController, UISearchBarDel
         return searchList.count
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchBarSearchButtonClicked(searchBar)
-    }
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! BookShelfCollectionViewCell
         

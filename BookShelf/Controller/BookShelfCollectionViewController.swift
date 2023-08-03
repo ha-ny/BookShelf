@@ -39,6 +39,11 @@ class BookShelfCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = layout
     }
     
+    @objc func likeButtonClick(_ sender: UIButton){
+        MovieInfo.movie[sender.tag].like.toggle()
+        collectionView.reloadData()
+    }
+    
     @IBAction func searchButtonClick(_ sender: UIBarButtonItem) {
         let vc = storyboard?.instantiateViewController(identifier: searchViewIdentifier)
         navigationController?.pushViewController(vc!, animated: true)
@@ -61,12 +66,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
         
         return cell
     }
-    
-    @objc func likeButtonClick(_ sender: UIButton){
-        MovieInfo.movie[sender.tag].like.toggle()
-        collectionView.reloadData()
-    }
-    
+        
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: detailViewIdentifier) as! BookDetailViewController
         vc.index = indexPath.row

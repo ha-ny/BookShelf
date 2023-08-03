@@ -8,6 +8,5 @@
 import UIKit
 
 class LastViewCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet var movieImage: UIImageView!
 }

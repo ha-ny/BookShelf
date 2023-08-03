@@ -17,26 +17,17 @@ class BookDetailViewController: UIViewController {
     @IBOutlet var releaseLabel: UILabel!
     @IBOutlet var runtimeLabel: UILabel!
     @IBOutlet var overviewLabel: UITextView!
-    
     @IBOutlet var memoLabel: UITextView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var likeButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingView()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButton))
+        settingView()
     }
     
-    @objc func closeButton(){
-        
-        if (self.presentingViewController) != nil{
-            dismiss(animated: true)
-        }else{
-            navigationController?.popViewController(animated: true)
-        }
-    }
     override func viewWillDisappear(_ animated: Bool) {
         MovieInfo.movie[index].memo = memoLabel.text
     }
@@ -57,6 +48,15 @@ class BookDetailViewController: UIViewController {
         MovieInfo.lastViewArray.insert(data.title, at: 0)
     }
     
+    @objc func closeButton(){
+        
+        if (self.presentingViewController) != nil{
+            dismiss(animated: true)
+        }else{
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     @IBAction func likeButtonClick(_ sender: UIBarButtonItem) {
         MovieInfo.movie[index].like.toggle()
         likeButton.image = UIImage(systemName: MovieInfo.movie[index].like ? "heart.fill" : "heart")
@@ -74,9 +74,5 @@ class BookDetailViewController: UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)
-    }
-    
-    @IBAction func backbuttonClick(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
     }
 }
