@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookDetailViewController: UIViewController {
+class BookDetailViewController: UIViewController, UITextViewDelegate {
 
     //메인화면에서 값 세팅해줌
     var index: Int = 0
@@ -25,11 +25,8 @@ class BookDetailViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButton))
+        memoLabel.delegate = self
         settingView()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        MovieInfo.movie[index].memo = memoLabel.text
     }
     
     @objc func settingView(){
@@ -50,7 +47,7 @@ class BookDetailViewController: UIViewController {
     
     @objc func closeButton(){
         
-        if (self.presentingViewController) != nil{
+        if let _ = (self.presentingViewController){
             dismiss(animated: true)
         }else{
             navigationController?.popViewController(animated: true)
@@ -67,6 +64,10 @@ class BookDetailViewController: UIViewController {
         let alert = UIAlertController(title: "알림", message: "삭제하시겠습니까?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "삭제", style: .default){_ in
             
+            if let saveIndex = MovieInfo.movie.firstIndex(where: { $0.title == MovieInfo.lastViewArray[self.index]}){
+                MovieInfo.lastViewArray.remove(at: saveIndex)
+            }
+
             MovieInfo.movie.remove(at: self.index)
             self.navigationController?.popViewController(animated: true)
         }
@@ -74,5 +75,9 @@ class BookDetailViewController: UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        MovieInfo.movie[index].memo = memoLabel.text
     }
 }
