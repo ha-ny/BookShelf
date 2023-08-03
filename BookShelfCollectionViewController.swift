@@ -11,7 +11,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
     
     let cellIdentifier = "BookShelfCollectionViewCell"
     let detailViewIdentifier = "BookDetailViewController"
-    let searchViewIdentifier = "searchViewController"
+    let searchViewIdentifier = "SearchCollectionViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()

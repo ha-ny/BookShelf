@@ -17,33 +17,42 @@ class BookDetailViewController: UIViewController {
     @IBOutlet var releaseLabel: UILabel!
     @IBOutlet var runtimeLabel: UILabel!
     @IBOutlet var overviewLabel: UITextView!
+    
+    @IBOutlet var memoLabel: UITextView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var likeButton: UIBarButtonItem!
-    @IBOutlet var backButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButton.isHidden = true
         settingView()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButton))
+    }
+    
+    @objc func closeButton(){
+        
+        if (self.presentingViewController) != nil{
+            dismiss(animated: true)
+        }else{
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        MovieInfo.movie[index].memo = memoLabel.text
     }
     
     @objc func settingView(){
 
         let data = MovieInfo.movie[index]
-        
-        if viewName == "AroundTableViewController"{
-            backButton.isHidden = false
-            releaseLabel.text = "\(data.title)\n\(data.releaseDate)"
-        }else{
-            title = data.title
-            releaseLabel.text = data.releaseDate
-        }
 
+        title = data.title
+        releaseLabel.text = data.releaseDate
         rateLabel.text = "평점: \(data.rate)"
         runtimeLabel.text = "러닝타임: \(data.runtime)분"
         overviewLabel.text = data.overview
         imageView.image = UIImage(named: data.title)
         likeButton.image = UIImage(systemName: data.like ? "heart.fill" : "heart")
+        memoLabel.text = data.memo
         MovieInfo.movie[index].click += 1
         MovieInfo.lastViewArray.insert(data.title, at: 0)
     }

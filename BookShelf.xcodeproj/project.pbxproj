@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F914CB22A7B9098004F49E0 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F914CB12A7B9098004F49E0 /* SearchCollectionViewController.swift */; };
 		3FCC23232A7A244F00D9C0D3 /* AroundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC23222A7A244F00D9C0D3 /* AroundTableViewController.swift */; };
 		3FCC23262A7A283B00D9C0D3 /* LastViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC23242A7A283B00D9C0D3 /* LastViewCollectionViewCell.swift */; };
 		3FCC23272A7A283B00D9C0D3 /* LastViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCC23252A7A283B00D9C0D3 /* LastViewCollectionViewCell.xib */; };
@@ -20,10 +21,10 @@
 		3FDB6B5C2A779AD50031CBBC /* BookShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */; };
 		3FDB6B5D2A779AD50031CBBC /* BookShelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */; };
 		3FDB6B5F2A779C9B0031CBBC /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B5E2A779C9B0031CBBC /* MovieInfo.swift */; };
-		3FDB6B612A77A5570031CBBC /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B602A77A5570031CBBC /* searchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F914CB12A7B9098004F49E0 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		3FCC23222A7A244F00D9C0D3 /* AroundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		3FCC23242A7A283B00D9C0D3 /* LastViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3FCC23252A7A283B00D9C0D3 /* LastViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastViewCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -39,7 +40,6 @@
 		3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookShelfCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		3FDB6B5E2A779C9B0031CBBC /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = SOURCE_ROOT; };
-		3FDB6B602A77A5570031CBBC /* searchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +72,10 @@
 		3FDB6B432A779A110031CBBC /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
+				3F914CB12A7B9098004F49E0 /* SearchCollectionViewController.swift */,
 				3FCC23242A7A283B00D9C0D3 /* LastViewCollectionViewCell.swift */,
 				3FCC23252A7A283B00D9C0D3 /* LastViewCollectionViewCell.xib */,
 				3FCC23222A7A244F00D9C0D3 /* AroundTableViewController.swift */,
-				3FDB6B602A77A5570031CBBC /* searchViewController.swift */,
 				3FDB6B5A2A779AD50031CBBC /* BookShelfCollectionViewCell.swift */,
 				3FDB6B5B2A779AD50031CBBC /* BookShelfCollectionViewCell.xib */,
 				3FDB6B4A2A779A110031CBBC /* Main.storyboard */,
@@ -164,8 +164,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F914CB22A7B9098004F49E0 /* SearchCollectionViewController.swift in Sources */,
 				3FCC23262A7A283B00D9C0D3 /* LastViewCollectionViewCell.swift in Sources */,
-				3FDB6B612A77A5570031CBBC /* searchViewController.swift in Sources */,
 				3FDB6B492A779A110031CBBC /* BookDetailViewController.swift in Sources */,
 				3FCC23232A7A244F00D9C0D3 /* AroundTableViewController.swift in Sources */,
 				3FDB6B452A779A110031CBBC /* AppDelegate.swift in Sources */,
