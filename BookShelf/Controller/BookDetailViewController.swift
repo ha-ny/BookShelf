@@ -11,7 +11,6 @@ class BookDetailViewController: UIViewController, UITextViewDelegate {
 
     //메인화면에서 값 세팅
     var index: Int = 0
-    var viewName: String?
     
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var releaseLabel: UILabel!
@@ -43,6 +42,10 @@ class BookDetailViewController: UIViewController, UITextViewDelegate {
         memoLabel.text = data.memo
         MovieInfo.movie[index].click += 1
         MovieInfo.lastViewArray.insert(data.title, at: 0)
+        if MovieInfo.lastViewArray.count > 5{
+            MovieInfo.lastViewArray.removeLast()
+        }
+        
     }
     
     @objc func closeButton(){
@@ -64,12 +67,15 @@ class BookDetailViewController: UIViewController, UITextViewDelegate {
         let alert = UIAlertController(title: "알림", message: "삭제하시겠습니까?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "삭제", style: .default){_ in
             
-            if let saveIndex = MovieInfo.movie.firstIndex(where: { $0.title == MovieInfo.lastViewArray[self.index]}){
-                MovieInfo.lastViewArray.remove(at: saveIndex)
+            //삭제되면 Index out of range.. 복사본 만듬
+            for i in (0...MovieInfo.lastViewArray.count - 1).reversed(){
+                if MovieInfo.movie[self.index].title == MovieInfo.lastViewArray[i]{
+                    MovieInfo.lastViewArray.remove(at: i)
+                }
             }
 
             MovieInfo.movie.remove(at: self.index)
-            self.navigationController?.popViewController(animated: true)
+            self.closeButton()
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(ok)

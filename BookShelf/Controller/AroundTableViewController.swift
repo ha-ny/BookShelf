@@ -31,6 +31,7 @@ class AroundTableViewController: UITableViewController, UICollectionViewDelegate
         data = MovieInfo.movie.sorted(by: { $0.click > $1.click })
         tableView.reloadData()
         lastViewCollectionView.reloadData()
+        print("삭제좀---------",MovieInfo.lastViewArray)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
@@ -62,7 +63,7 @@ class AroundTableViewController: UITableViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return MovieInfo.lastViewArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
