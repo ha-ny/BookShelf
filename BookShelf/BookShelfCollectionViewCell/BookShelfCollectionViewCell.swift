@@ -8,6 +8,8 @@
 import UIKit
 
 class BookShelfCollectionViewCell: UICollectionViewCell {
+    static let identifier = "BookShelfCollectionViewCell"
+    
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var imageView: UIImageView!

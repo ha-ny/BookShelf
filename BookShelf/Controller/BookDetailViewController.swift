@@ -9,6 +9,8 @@ import UIKit
 
 class BookDetailViewController: UIViewController, UITextViewDelegate {
 
+    static let identifier = "BookDetailViewController"
+    
     //메인화면에서 값 세팅
     var index: Int = 0
     
