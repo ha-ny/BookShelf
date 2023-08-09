@@ -11,7 +11,6 @@ class BookShelfCollectionViewController: UICollectionViewController {
     
     let cellIdentifier = "BookShelfCollectionViewCell"
     let detailViewIdentifier = "BookDetailViewController"
-    let searchViewIdentifier = "SearchCollectionViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +44,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func searchButtonClick(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: searchViewIdentifier)
+        let vc = storyboard?.instantiateViewController(identifier: SearchTableViewController.identifier)
         navigationController?.pushViewController(vc!, animated: true)
     }
     
