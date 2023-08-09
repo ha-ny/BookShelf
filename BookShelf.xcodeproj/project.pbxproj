@@ -18,6 +18,9 @@
 		3FD3FE022A83D64800A52188 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3FE012A83D64800A52188 /* SearchTableViewController.swift */; };
 		3FD3FE052A83D7FB00A52188 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3FE032A83D7FB00A52188 /* SearchTableViewCell.swift */; };
 		3FD3FE062A83D7FB00A52188 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD3FE042A83D7FB00A52188 /* SearchTableViewCell.xib */; };
+		3FD3FE092A83E8E700A52188 /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 3FD3FE082A83E8E700A52188 /* SwiftyXMLParser */; };
+		3FD3FE0E2A83EE0300A52188 /* etcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3FE0D2A83EE0300A52188 /* etcTableViewController.swift */; };
+		3FD3FE142A83F48300A52188 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3FE132A83F48300A52188 /* BookInfo.swift */; };
 		3FDB6B452A779A110031CBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B442A779A110031CBBC /* AppDelegate.swift */; };
 		3FDB6B472A779A110031CBBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B462A779A110031CBBC /* SceneDelegate.swift */; };
 		3FDB6B492A779A110031CBBC /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB6B482A779A110031CBBC /* BookDetailViewController.swift */; };
@@ -37,8 +40,10 @@
 		3FD3FDFD2A83D09B00A52188 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3FD3FDFF2A83D0F600A52188 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		3FD3FE012A83D64800A52188 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = BookShelf/Controller/SearchTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		3FD3FE032A83D7FB00A52188 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		3FD3FE042A83D7FB00A52188 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		3FD3FE032A83D7FB00A52188 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = BookShelf/SearchTableViewCell/SearchTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		3FD3FE042A83D7FB00A52188 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchTableViewCell.xib; path = BookShelf/SearchTableViewCell/SearchTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		3FD3FE0D2A83EE0300A52188 /* etcTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = etcTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		3FD3FE132A83F48300A52188 /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookInfo.swift; path = SearchTableViewCell/BookInfo.swift; sourceTree = "<group>"; };
 		3FDB6B412A779A110031CBBC /* BookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDB6B442A779A110031CBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDB6B462A779A110031CBBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 				3FD3FDFC2A83CFBC00A52188 /* Kingfisher in Frameworks */,
 				3FD3FDF92A83CFB300A52188 /* SwiftyJSON in Frameworks */,
 				3FD3FDF62A83CFAA00A52188 /* Alamofire in Frameworks */,
+				3FD3FE092A83E8E700A52188 /* SwiftyXMLParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +111,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3FD3FE0A2A83E8F100A52188 /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3FE042A83D7FB00A52188 /* SearchTableViewCell.xib */,
+				3FD3FE032A83D7FB00A52188 /* SearchTableViewCell.swift */,
+			);
+			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
 		3FDB6B382A779A110031CBBC = {
 			isa = PBXGroup;
 			children = (
@@ -124,17 +139,18 @@
 		3FDB6B432A779A110031CBBC /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
-				3FD3FE032A83D7FB00A52188 /* SearchTableViewCell.swift */,
-				3FD3FE042A83D7FB00A52188 /* SearchTableViewCell.xib */,
-				3F914CB42A7BA142004F49E0 /* Delegate */,
+				3FD3FE0D2A83EE0300A52188 /* etcTableViewController.swift */,
+				3FD3FE0A2A83E8F100A52188 /* SearchTableViewCell */,
 				3F914CB32A7BA11C004F49E0 /* LastViewCollectionViewCell */,
 				3F914CB52A7BA14F004F49E0 /* BookShelfCollectionViewCell */,
 				3F914CB62A7BA17B004F49E0 /* Controller */,
 				3FDB6B5E2A779C9B0031CBBC /* MovieInfo.swift */,
+				3FD3FE132A83F48300A52188 /* BookInfo.swift */,
 				3FDB6B4A2A779A110031CBBC /* Main.storyboard */,
 				3FDB6B4D2A779A120031CBBC /* Assets.xcassets */,
 				3FDB6B4F2A779A120031CBBC /* LaunchScreen.storyboard */,
 				3FDB6B522A779A120031CBBC /* Info.plist */,
+				3F914CB42A7BA142004F49E0 /* Delegate */,
 				3FD3FDFD2A83D09B00A52188 /* .gitignore */,
 				3FD3FDFF2A83D0F600A52188 /* APIKey.swift */,
 			);
@@ -161,6 +177,7 @@
 				3FD3FDF52A83CFAA00A52188 /* Alamofire */,
 				3FD3FDF82A83CFB300A52188 /* SwiftyJSON */,
 				3FD3FDFB2A83CFBC00A52188 /* Kingfisher */,
+				3FD3FE082A83E8E700A52188 /* SwiftyXMLParser */,
 			);
 			productName = BookShelf;
 			productReference = 3FDB6B412A779A110031CBBC /* BookShelf.app */;
@@ -194,6 +211,7 @@
 				3FD3FDF42A83CFAA00A52188 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3FD3FDF72A83CFB300A52188 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3FD3FDFA2A83CFBC00A52188 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3FD3FE072A83E8E700A52188 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
 			);
 			productRefGroup = 3FDB6B422A779A110031CBBC /* Products */;
 			projectDirPath = "";
@@ -227,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCC23262A7A283B00D9C0D3 /* LastViewCollectionViewCell.swift in Sources */,
+				3FD3FE142A83F48300A52188 /* BookInfo.swift in Sources */,
 				3FDB6B492A779A110031CBBC /* BookDetailViewController.swift in Sources */,
 				3FCC23232A7A244F00D9C0D3 /* AroundTableViewController.swift in Sources */,
 				3FD3FE002A83D0F600A52188 /* APIKey.swift in Sources */,
@@ -236,6 +255,7 @@
 				3FDB6B592A779AC20031CBBC /* BookShelfCollectionViewController.swift in Sources */,
 				3FD3FE022A83D64800A52188 /* SearchTableViewController.swift in Sources */,
 				3FDB6B5F2A779C9B0031CBBC /* MovieInfo.swift in Sources */,
+				3FD3FE0E2A83EE0300A52188 /* etcTableViewController.swift in Sources */,
 				3FDB6B472A779A110031CBBC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +508,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		3FD3FE072A83E8E700A52188 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yahoojapan/SwiftyXMLParser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -505,6 +533,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3FD3FDFA2A83CFBC00A52188 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		3FD3FE082A83E8E700A52188 /* SwiftyXMLParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FD3FE072A83E8E700A52188 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
+			productName = SwiftyXMLParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

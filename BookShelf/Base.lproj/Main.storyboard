@@ -343,7 +343,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YW-VO-v8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3626.7175572519081" y="372.53521126760563"/>
+            <point key="canvasLocation" x="4305" y="373"/>
+        </scene>
+        <!--둘러보기-->
+        <scene sceneID="Qju-Te-NXr">
+            <objects>
+                <tableViewController storyboardIdentifier="etcTableViewController" id="koz-lE-Opm" customClass="etcTableViewController" customModule="BookShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qTy-XK-GJl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.77647060160000003" green="0.83137255909999996" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="92" id="mjV-AZ-7LI">
+                                <rect key="frame" x="0.0" y="50" width="393" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mjV-AZ-7LI" id="7up-S3-9Mf">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="92"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="koz-lE-Opm" id="huj-I4-ZcH"/>
+                            <outlet property="delegate" destination="koz-lE-Opm" id="OyH-xK-Bpw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="둘러보기" id="s5f-nN-nTd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Oy-fK-PGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3587" y="373"/>
         </scene>
         <!--책장-->
         <scene sceneID="wTf-S2-8Wi">
@@ -376,7 +405,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vZm-Bc-XmH" kind="relationship" relationship="rootViewController" id="uRy-oZ-e5b"/>
+                        <segue destination="koz-lE-Opm" kind="relationship" relationship="rootViewController" id="9Zo-QC-VSK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFt-1Y-mTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

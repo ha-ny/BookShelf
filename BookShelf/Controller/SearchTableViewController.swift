@@ -10,12 +10,6 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-struct Book{
-    let thumbnail: String
-    let title: String
-    let contents: String
-}
-
 class SearchTableViewController: UITableViewController {
 
     static let identifier = "SearchTableViewController"
