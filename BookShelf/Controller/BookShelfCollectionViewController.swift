@@ -6,17 +6,25 @@
 //
 
 import UIKit
+import Kingfisher
+import RealmSwift
 
 class BookShelfCollectionViewController: UICollectionViewController {
     
     let cellIdentifier = "BookShelfCollectionViewCell"
     let detailViewIdentifier = "BookDetailViewController"
     
+    var tasks: Results<BookTable>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let nib = UINib(nibName: cellIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+                                
+        if let realm = try? Realm(){
+            tasks = realm.objects(BookTable.self)
+        }
         
         designCollectionView()
     }
@@ -49,18 +57,18 @@ class BookShelfCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  MovieInfo.movie.count
+        return tasks.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! BookShelfCollectionViewCell
-        cell.titleLabel.text =  MovieInfo.movie[indexPath.row].title
-        cell.imageView.image = UIImage(named:  MovieInfo.movie[indexPath.row].title)
+        cell.titleLabel.text = tasks[indexPath.row].title
+        cell.imageView.kf.setImage(with: URL(string: tasks[indexPath.row].thumbnail ?? ""))
         
-        let heart =  MovieInfo.movie[indexPath.row].like ? "heart.fill" : "heart"
-        cell.likeButton.setImage(UIImage(systemName: heart), for: .normal)
-        cell.likeButton.tag = indexPath.row
+       // let heart =  MovieInfo.movie[indexPath.row].like ? "heart.fill" : "heart"
+        //cell.likeButton.setImage(UIImage(systemName: heart), for: .normal)
+        //cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClick), for: .touchUpInside)
         
         return cell
@@ -68,7 +76,7 @@ class BookShelfCollectionViewController: UICollectionViewController {
         
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: detailViewIdentifier) as! BookDetailViewController
-        vc.index = indexPath.row
+        //vc.index = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
     }
 }

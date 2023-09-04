@@ -40,7 +40,7 @@ extension etcTableViewController{
                 
                 for i in 0...49{
                     print(i)
-                    self.bookData.append(Book(thumbnail: xml["object", "item", i, "cover"].text ?? "", title: xml["object", "item", i, "title"].text ?? "", contents: xml["object", "item", i, "description"].text ?? ""))
+                    self.bookData.append(Book(isbn: nil, thumbnail: xml["object", "item", i, "cover"].text ?? "", title: xml["object", "item", i, "title"].text ?? "", contents: xml["object", "item", i, "description"].text ?? ""))
                 }
 
                 self.tableView.reloadData()

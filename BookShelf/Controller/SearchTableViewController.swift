@@ -13,6 +13,8 @@ import Kingfisher
 class SearchTableViewController: UITableViewController {
 
     static let identifier = "SearchTableViewController"
+    let detailViewIdentifier = "BookDetailViewController"
+    
     let searchBar = UISearchBar()
     var bookData: [Book] = []
     var page = 1
@@ -51,6 +53,12 @@ extension SearchTableViewController: UITableViewDataSourcePrefetching{
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: detailViewIdentifier) as! BookDetailViewController
+        vc.bookData = bookData[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths{
             if bookData.count - 1 == indexPath.row && page < 50{
@@ -72,8 +80,9 @@ extension SearchTableViewController{
             switch respons.result{
             case .success(let value):
                 let json = JSON(value)
+
                 for item in json["documents"].arrayValue{
-                    self.bookData.append(Book(thumbnail: item["thumbnail"].stringValue, title: item["title"].stringValue, contents: item["contents"].stringValue))
+                    self.bookData.append(Book(isbn: item["isbn"].stringValue, thumbnail: item["thumbnail"].stringValue, title: item["title"].stringValue, contents: item["contents"].stringValue))
                 }
                 print(json)
                 self.tableView.reloadData()
